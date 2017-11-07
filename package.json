@@ -7,7 +7,7 @@
 		"lint": "node_modules/.bin/esw src server",
 		"lint:watch": "npm run lint -- --watch",
 		"open:app": "node -r babel-register server/startServer.js",
-		"start": "npm run lint:watch | npm run open:app",
+		"start": "webpack-dashboard -- npm run lint:watch | npm run open:app",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"repository": {
@@ -54,6 +54,7 @@
 		"file-loader": "^1.1.5",
 		"react-hot-loader": "^3.1.1",
 		"style-loader": "^0.19.0",
-		"svg-inline-loader": "^0.8.0"
+		"svg-inline-loader": "^0.8.0",
+		"webpack-dashboard": "^1.0.1"
 	}
 }
