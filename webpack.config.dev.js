@@ -29,14 +29,20 @@ export default {
 					}
 				]
 			},
-			{test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file'},
-			{test: /\.(woff|woff2)$/, loader: 'url?prefix=font/&limit=5000'},
-			{test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=application/octet-stream'},
-			{test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'file-loader'}
+			{
+				test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
+				loader: 'url-loader',
+				options: {
+					limit: 10000
+				}
+			}
 		]
 	},
 	plugins: [
-		new webpack.HotModuleReplacementPlugin()
+		new webpack.HotModuleReplacementPlugin(),
+		new webpack.LoaderOptionsPlugin({
+			debug: true
+		})
 	],
 	target: 'web'
 };
