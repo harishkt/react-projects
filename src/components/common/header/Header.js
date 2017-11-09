@@ -4,6 +4,7 @@ import Home from '../../home/HomePage';
 import HackerNews from '../../hackernews/HackerNews';
 import About from '../../about/AboutPage';
 import ColorBox from '../../colorbox/ColorBoxes';
+import ToDoApp from '../../todo/ToDoPage';
 
 const Header = () => {
 	return(
@@ -16,12 +17,15 @@ const Header = () => {
 				<Link to='/about'>About</Link>
 				{ " | "}
 				<Link to='/colors'>ColorBox</Link>
+				{ " | "}
+				<Link to='/todo'>ToDoApp</Link>
 			</nav>
 			<Switch>
 				<Route exact path='/' component={Home} />
 				<Route path='/news' component={HackerNews} />
 				<Route path='/about' component={About} />
 				<Route path='/colors' component={ColorBox} />
+				<Route path='/todo' component={ToDoApp} />
 			</Switch>
 		</div>
 	)
