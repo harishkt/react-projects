@@ -18,16 +18,9 @@ export default {
 	module: {
 		rules: [
 			{test: /\.(js|jsx)$/, use: 'babel-loader', exclude: [/node_modules/]},
-			{test: /\.css$/,
-				use: [
-					{ loader: 'style-loader' },
-					{
-						loader: 'css-loader',
-						options: {
-							modules: true
-						}
-					}
-				]
+			{
+				test: /\.css$/,
+				loader: 'style-loader!css-loader'
 			},
 			{
 				test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,

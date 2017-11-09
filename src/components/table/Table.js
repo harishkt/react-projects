@@ -33,9 +33,7 @@ class Table extends Component {
 							<th>Comments</th>
 						</tr>
 					</thead>
-					<tbody>
 					{list}
-					</tbody>
 				</table>
 			</div>
 		);
