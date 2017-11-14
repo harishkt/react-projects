@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
+import './todo.css';
 const initList  = ["Push daily to Github", "Develop at least 10-15 React Apps ", "Learn more about WebPack, babel and Jest", "Learn about Redux", "Implement Redux in existing Apps - Learn it organically", "Deploy Projects through Heroku", "Dockerize All projects", "Learn Fucking CSS", "Implement a game in React", "Port all the existing projects to React Native", "Integrate Some projects through Express", "Learn Server/Client Rendering", "Learn SEO", "Learn Performance Optimization"];
 
 const ToDoHeader = () => {
 	return(
 		<div>
-			<h1>TODO APP</h1>
-			<p>Built using React</p>
+			<h1 className='title'>TODO APP</h1>
 		</div>
 	)
 }
@@ -16,9 +16,11 @@ const AddItem = ({ onChange, onAdd, value }) => {
 				type='text'
 				onChange={onChange}
 				value={value}
+				className='newTask'
 			/>
 			<button
 				type='button'
+				className='button'
 				onClick={onAdd}
 			> Add </button>
 
@@ -161,7 +163,7 @@ class ToDoBody extends Component {
 export default class ToDoPage extends Component {
 	render(){
 		return(
-			<div className='container'>
+			<div>
 				<ToDoHeader />
 				<ToDoBody />
 			</div>
